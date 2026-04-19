@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "katex/dist/katex.min.css";
+
+/* KaTeX fix: Prevent double-rendering of HTML and MathML fallbacks */
+.katex-mathml {
+  display: none !important;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* breathing room for mixed Chinese and LaTeX math */
+.prose {
+  text-align: justify;
+  word-break: break-word;
+}
+
+.prose .katex-display {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.prose .katex {
+  font-size: 1.05em;
+  padding: 0 0.1em;
+}
+
+body {
+  @apply font-sans;
+}
